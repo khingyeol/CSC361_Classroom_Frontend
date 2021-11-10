@@ -1,13 +1,110 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'FC-Subject';
+  src: url('./assets/FC Subject [Non-commercial use] Regular ver 1.00.ttf');
+  font-weight: regular;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face{
+  font-family: 'FC-Subject';
+  src: url('./assets/FC\ Subject\ [Non-commercial\ use]\ Bold\ ver\ 1.00.ttf');
+  font-weight: bold;
+}
+
+/* html{
+  zoom: 0.9;
+  -moz-transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+} */
+
+body{
+  margin: 0;
+  font-family: 'FC-Subject',
+  'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: theme('colors.lightgrey');
+}
+
+.site-title{
+  font-weight: bold;
+  font-size: 30px;
+  color: theme('colors.black');
+}
+
+.colors-green{
+  color: theme('colors.green');
+}
+
+/* homepage */
+.home.profile-dp{
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  border-width: 1px;
+  border-color: theme('colors.grey');
+  background-color: white;
+}
+
+.square-btn{
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background-color: theme('colors.grey');
+  opacity: 0.2;
+}
+.header{
+  /* background-color: yellow; */
+}
+
+.navbar{
+  background-color: white;
+  position: fixed;
+  left: 0;
+  height: 100%;
+  border-top-right-radius: 50px;
+  font-size: 18px;
+  padding-top: 50px;
+  overflow: hidden;
+}
+
+.nav-list{
+  color: theme('colors.black');
+  height: 65px;
+  padding-left: 40px;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.navbar .nav-list:hover,
+.navbar .nav-list:active
+{
+  border-right-width: 5px;
+  border-color: theme('colors.green');
+}
+
+.navbar .nav-list{
+  align-items: center;
+  align-self: center;
+  align-content: center;
+
+}
+
+.class-list{
+  height: 55px;
+  padding-left: 80px;
+  font-size: 18px;
+}
+
+.class-list:hover{
+  background-color: rgba(65, 176, 148, 0.10);
+}
+
+.class-list .sub{
+  font-size: 16px;
+  color: theme('colors.grey');
 }
