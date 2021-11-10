@@ -13,6 +13,7 @@
     "react-router-dom": "^6.0.1",
     "react-scripts": "4.0.3",
     "standard": "^16.0.4",
+    "url-join": "^4.0.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
