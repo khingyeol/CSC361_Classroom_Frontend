@@ -6,9 +6,9 @@ function CallClass(){
     const content = useState([])
 
     const classlist = content.map(() =>
-        <div class="class-list">
+        <div className="class-list">
             ei
-            <div class="sub">B01</div>
+            <div className="sub">B01</div>
         </div>
         
     ) 

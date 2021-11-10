@@ -30,9 +30,9 @@ body{
   background-color: theme('colors.lightgrey');
 }
 
-.site-title{
+h1{
   font-weight: bold;
-  font-size: 30px;
+  font-size: 32px;
   color: theme('colors.black');
 }
 
@@ -58,13 +58,15 @@ body{
   opacity: 0.2;
 }
 .header{
-  /* background-color: yellow; */
+  background-color: theme('colors.lightgrey');
+  position: sticky;
+  top: 0;
 }
 
 .navbar{
   background-color: white;
   position: fixed;
-  left: 0;
+  /* left: 0; */
   height: 100%;
   border-top-right-radius: 50px;
   font-size: 18px;
@@ -91,7 +93,6 @@ body{
   align-items: center;
   align-self: center;
   align-content: center;
-
 }
 
 .class-list{
@@ -108,3 +109,33 @@ body{
   font-size: 16px;
   color: theme('colors.grey');
 }
+
+.box{
+  background-color: white;
+  border-radius: 35px;
+}
+
+.tf{
+  font-size: 18px;
+  height: 43px;
+  border-radius: 21.5px;
+  background-color: theme('colors.lightgrey');
+}
+
+.btn{
+  font-size: 18px;
+  background-color: theme('colors.green');
+  color: white;
+  height: 43px;
+  border-radius: 21.5px;
+}
+
+.btn:hover{
+  background-color: #2C9A7E;
+}
+
+.authbox{
+  width: 522px;
+  height: 626px;
+}
+

@@ -6,9 +6,7 @@ import ClassCard from '../components/Home/ClassCard';
 function Homepage(){
     return(
         <div>
-            <Header />
             <ClassCard />
-            <h1>Welcome to our website</h1>
         </div>
     );
 }

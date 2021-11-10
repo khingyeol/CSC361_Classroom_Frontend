@@ -4,8 +4,8 @@ import '../../index.css'
 const ClassCard = () => {
 return (
     <div>
-        <div class="">
-        "kaa"
+        <div className="box shadow-lg h-60">
+        เอาไว้เทสไรโง่ๆ
         </div>
     </div>
     );
