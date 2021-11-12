@@ -13,7 +13,7 @@ export const register = async (values) => {
 export const isLoggedIn = () => {
   let token = localStorage.getItem(server.TOKEN_KEY);
   return token != null;
-};
+}; //ถ้ามี return true
 
 export const logout= () => {
   localStorage.removeItem(server.TOKEN_KEY);

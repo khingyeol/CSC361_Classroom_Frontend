@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { login } from '../../services/actions/api_auth'
 import '../../index.css'
+import { Navigate } from 'react-router-dom'
+import { isLoggedIn } from '../../services/actions/api_auth';
 
 const AuthCard = () => {
     const [inputs, setInputs] = useState({})
@@ -14,7 +16,7 @@ const AuthCard = () => {
     const onTappedLogin = async (e) => {
         e.preventDefault();
         const res = await login(inputs);
-        if(res.auth){
+        if(res.auth){ //res.auth ว่ามี tokenมั้ย
             console.log(res.data);
         }
         else {
@@ -22,12 +24,16 @@ const AuthCard = () => {
         }
     };
 
+    if (localStorage.getItem('token')){ 
+        // <Navigate to='/home' />
+    }
+
 return (
     <div>
-        <div className="authbox box shadow-lg align-bottom">
-            <div className="eiei">
+        <div className="authbox box shadow-lg items-center">
+            <div className="eiei items-center">
                 <form onSubmit={onTappedLogin}>
-                <h1 className="">Loginsdfsdsssssssssssssssssssssssssss</h1>
+                <h1 className="">Login</h1>
                 <input 
                 type="text" 
                 className="tf" 

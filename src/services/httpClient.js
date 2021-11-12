@@ -28,7 +28,6 @@ axios.interceptors.response.use(
     return response;
   },
   (error) => {
-
     if(error.response.status === 403) {
       return 403;
     }

@@ -8,13 +8,16 @@ function CallClass(){
 
 
     useEffect( async () => {
-        const res = await getAllClass();
-        if (res.data.result = 'OK') {
-            setContent(res.data.data)
-        }
-        else {
-            setContent([])
-        }
+
+            const res = await getAllClass();
+            console.log(res)
+            if (res.data.result = 'OK') {
+                setContent(res.data.data)
+            }
+            else {
+                setContent([])
+            }    
+
         
     }, []);
 
