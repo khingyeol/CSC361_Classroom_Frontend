@@ -5,7 +5,9 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      textColor: ['active'],
+    },
   },
   plugins: [],
 }
@@ -13,6 +15,19 @@ module.exports = {
 const colors = require('tailwindcss/colors')
 module.exports = {
   theme: {
+    textColor: {
+      'green': '#41B094',
+      'grey': '#8B8B8B',
+      'red' : '#B04141'
+    },
+    extends: {
+      backgroundOpacity:{
+        '10' : '0.1',
+      },
+      divideOpacity:{
+        '10' : '0.1',
+      }
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',

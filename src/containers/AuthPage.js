@@ -1,15 +1,17 @@
 import AuthCard from "../components/Auth/AuthCard";
-import Header from "../components/main/Header";
+import RegisCard from "../components/Auth/RegisCard";
+import Header from "../components/Auth/Header";
 import React from 'react';
 import '../index.css'
+import { toRegister } from '../components/Auth/AuthCard'
 
 function AuthPage(){
     return(
         <div>
             <Header />
-            <div className='grid grid-cols-4 '>
-                <div className='col-span-2'></div>
-                <div className='col-span-2'>
+            <div className='grid xl:grid-cols-4 w-auto sm:grid-cols-1'>
+                <div className='col-span-2 '></div>
+                <div className='grid justify-items-center'>
                     <AuthCard />
                 </div>
                 
@@ -18,5 +20,6 @@ function AuthPage(){
         </div>
     );
 }
+
 
 export default AuthPage;

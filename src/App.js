@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
 import './index.css'
-import { BrowserRouter, Route, Routes, Navig } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Outlet, Link } from 'react-router-dom'
 import Homepage from './containers/Homepage'
-import Classfeed from './containers/Classfeed'
-import Layout from './layouts/Layout'
 import AuthPage from './containers/AuthPage'
 import ClassCard from './components/Home/ClassCard'
 import { isLoggedIn } from './services/actions/api_auth'
+import Header from './components/main/Header'
+import Navigation from './components/main/Navigation'
 
 function App() {
 
@@ -16,18 +15,20 @@ function App() {
   }
 
     return (
-
-        <Routes>
-    
+      <div>
+        <Header />
+        <div className="w-72  navbar shadow-lg" >
+          <Navigation />
+        </div>
         
-
-          <Route path="/"
-                element={<div className="ml-80"> <Homepage/> </div>}
-          />
-        </Routes>
-    
-
-    
+        <div className='ml-80 mr-10'>
+          <div className='inline-grid grid-cols-3 gap-x-4 gap-y-4 '>
+            <Outlet />
+            </div>
+  
+         </div>
+  
+        </div>
     );
 }
 

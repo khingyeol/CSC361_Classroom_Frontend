@@ -36,6 +36,24 @@ h1{
   color: theme('colors.black');
 }
 
+h2{
+  font-weight: bold;
+  font-size: 24px;
+  color: theme('colors.black');
+}
+
+h3{
+  font-weight: bold;
+  font-size: 21px;
+  color: theme('colors.black');
+}
+
+h4{
+  font-weight: bold;
+  font-size: 18px;
+  color: theme('colors.black');
+}
+
 .colors-green{
   color: theme('colors.green');
 }
@@ -78,6 +96,7 @@ h1{
   color: theme('colors.black');
   height: 65px;
   padding-left: 40px;
+  padding-right: 40px;
   font-size: 21px;
   font-weight: bold;
 }
@@ -124,6 +143,7 @@ h1{
 }
 
 .btn{
+  font-weight: bold;
   font-size: 18px;
   background-color: theme('colors.green');
   color: white;
@@ -138,8 +158,74 @@ h1{
 .authbox{
   width: 522px;
   height: 626px;
+  /* vertical-align: middle; */
+  /* display: table-cell; */
+  /* align-items: center;
+  padding: 0 3rem; */
 }
 
 .eiei{
-  
+  background-color: cadetblue;
+  /* display: block; */
 }
+
+.ee{
+  background-color: burlywood;
+}
+
+.asm{
+  border-width: 1px;
+  border-color:rgba(112, 112, 112, 0.30);
+  min-height: 120px;
+  width: 60vmax;
+  margin-bottom: 20px;
+  padding: 0px 30px;
+  display: flex;
+}
+
+.box.post{
+  border-width: 1px;
+  border-color:rgba(112, 112, 112, 0.30);
+  min-height: 120px;
+  /* width: 60vmax; */
+  margin-bottom: 20px;
+}
+
+.container4{
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#left{
+	position: fixed;
+	top: 120px;
+	left: 0px;
+  padding-top: 50px;
+	background: white;
+  font-size: 18px;
+	width: 18rem;
+  height: 100%;
+  border-top-right-radius: 50px;
+  overflow: hidden;
+}
+
+#middle {
+	margin: 20px 24rem 20px 18rem;
+	padding: 10px;
+	}
+  
+#right {
+	position: absolute;
+	top: 120px;
+	right: 0px; /* Opera5.02 will show a space 
+	at right when there is no scroll bar */
+	padding: 10px;
+	width: 150px; /* ie5win fudge begins */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 24rem;
+	}

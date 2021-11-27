@@ -11,9 +11,8 @@ const Layout = () => {
         <div className="">
             <div className="w-72  navbar shadow-lg" ><Navigation /></div>
         </div>
-        <div className="ml-80">
-            {/* <ClassCard /> 
-            <AuthCard /> */}
+        <div className="ml-80 mr-10">
+            <ClassCard />             
         </div>
     </React.Fragment>
     );
