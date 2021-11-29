@@ -11,23 +11,18 @@ import Navigation from './components/main/Navigation'
 function App() {
 
   if(!isLoggedIn()){
-    return <AuthPage />
+    return ( 
+    <AuthPage />
+    
+    );
   }
 
     return (
       <div>
         <Header />
-        <div className="w-72  navbar shadow-lg" >
-          <Navigation />
-        </div>
-        
-        <div className='ml-80 mr-10'>
-          <div className='inline-grid grid-cols-3 gap-x-4 gap-y-4 '>
-            <Outlet />
-            </div>
-  
-         </div>
-  
+        <div>
+          <Outlet />
+        </div>  
         </div>
     );
 }

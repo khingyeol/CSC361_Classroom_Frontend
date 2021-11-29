@@ -1,5 +1,6 @@
 import React, { useState ,useEffect } from 'react';
 import { getAllClass } from '../../services/actions/api_class'
+import { Link } from 'react-router-dom';
 import '../../index.css'
 
 const ClassCard = () => {
@@ -18,6 +19,7 @@ const ClassCard = () => {
 
   const card = content.map((item) =>
   <main>
+    <Link to={'/'+item.class_code}>
   <div className="">
     <div class="relative box shadow-md rounded-md overflow-hidden" style={{width: '340px',height: '200px'}}>
       <div className=''>
@@ -42,6 +44,7 @@ const ClassCard = () => {
       </div>
     </div>
   </div>
+  </Link>
   </main>
   )
 

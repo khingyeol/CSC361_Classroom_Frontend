@@ -186,7 +186,7 @@ h4{
 .box.post{
   border-width: 1px;
   border-color:rgba(112, 112, 112, 0.30);
-  min-height: 120px;
+  min-height: 10px;
   /* width: 60vmax; */
   margin-bottom: 20px;
 }
@@ -229,3 +229,7 @@ h4{
 	voice-family:inherit;
 	width: 24rem;
 	}
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }

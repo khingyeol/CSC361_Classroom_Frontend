@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../index.css'
+import {useParams} from 'react-router-dom'
 
 const Navigation = () => {
+    const { classid } = useParams();
+
     return (
         <div className="relative h-full">
             <Link to="/">
@@ -14,9 +17,9 @@ const Navigation = () => {
 
             <div className="flex flex-wrap content-center items-stretch">
                 {/* <CallClass /> */}
-                <Link to="/class"><div className="class-list">feed</div></Link>
-                <Link to="/class/assignment"><div className="class-list">assignment</div></Link>
-                <Link to="/class/exam"><div className="class-list">examination</div></Link>
+                <Link to={`/${classid}`}><div className="class-list">feed</div></Link>
+                <Link to={`/${classid}/assignment`}><div className="class-list">assignment</div></Link>
+                <Link to={`/${classid}/exam`}><div className="class-list">examination</div></Link>
             </div>
 
 

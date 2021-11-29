@@ -20,9 +20,13 @@ export const api_auth = {
   REGISTER_URL: `/register`
 }
 
-
 export const api_class = {
   GET_ALL: `/get/all`,
-  GET: `/get`
+  GET: `/get`,
+  ASM_ALL: `/assignment/get/all`,
+  PUBLISH: `/post/publish`,
 }
 
+// export const api_post = {
+//   POST_ALL: `/post`,
+// }

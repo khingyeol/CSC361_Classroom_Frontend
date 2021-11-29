@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import '../index.css';
 import { BrowserRouter, Route, Routes, Outlet, Link } from 'react-router-dom'
 import {useParams} from 'react-router-dom'
-import PostBox from '../components/Class/PostBox';
-import FeedPost from '../components/Class/FeedPost';
 import { getfromClass } from '../services/actions/api_class';
+import ClassASM from '../components/Class/ClassASM';
 
-function ClassContent(){
+function ASMContent(){
 
   const { classid } = useParams();
   const [content, setContent] = useState([])
@@ -16,24 +15,24 @@ function ClassContent(){
 
     if(res.data.result = 'OK'){
       setContent(res.data.data)
+      console.log('asm',res.data.data)
     }else{
       setContent([])
     }
   }, []);
 
 
-    const FeedPostList = content.map((item) =>
-      <FeedPost data={item.class_feed} />
+    const ASMlist = content.map((item) =>
+      <ClassASM data={item.class_assignment} />
     )
 
     return(
       <React.Fragment>
           <div className="">
-          <PostBox />
-          {FeedPostList}
+            {ASMlist}
         </div>
   </React.Fragment>
 )
 }
 
-export default ClassContent;
+export default ASMContent;
