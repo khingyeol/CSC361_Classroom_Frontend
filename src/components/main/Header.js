@@ -19,12 +19,15 @@ const Header = () => {
 
     if(res.data.result = 'OK'){
       setContent(res.data)
-      console.log('content2',res.data)
     }else{
       setContent([])
     }
+
   }, []);
 
+    const head = content.map((item) =>
+        <Dropdown data={item} />
+    )
 
     return (
       <>
@@ -37,7 +40,7 @@ const Header = () => {
               
               {/* <button className="home square-btn m-3" type="button"></button> */}
                 <div className=""> <ModalDropdown /> </div>
-              <div className=""> <Dropdown /> </div>
+              <div className=""> {head} </div>
           </div>
   
           </div>

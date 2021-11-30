@@ -31,6 +31,7 @@ const AppWithRouter = () => (
             <Route path="/" element={<ClassCard />} />
             <Route path="/assignments" element={<AsmCard />}></Route>
           </Route>
+          </Route>
 
           <Route path="/:classid" element={<Classfeed />}>
             <Route path="/:classid/" element={<ClassContent />}></Route>
@@ -51,7 +52,6 @@ const AppWithRouter = () => (
 
           </Route>
 
-        </Route>
 
 
 

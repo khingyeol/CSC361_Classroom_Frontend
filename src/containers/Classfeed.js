@@ -31,7 +31,7 @@ function Classfeed(){
 
     return(
       <React.Fragment>
-        {/* <Header /> */}
+        <Header />
 
       <div className="" id="left">
         <Navigation />

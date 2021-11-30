@@ -4,11 +4,12 @@ import { BrowserRouter, Route, Routes, Outlet, Link } from 'react-router-dom'
 import Navigation from '../components/Assignments/Navigation'
 import {useParams} from 'react-router-dom'
 import Content from '../components/Assignments/Content'
+import Box from '../components/Assignments/Box'
+import Header from '../components/Class/Header';
 function ClassAssignment(){
 
     return(
       <React.Fragment>
-
       <div className="" id="left">
         <Navigation />
       </div>
@@ -17,16 +18,12 @@ function ClassAssignment(){
           <Outlet />
       </div>
 
-      {/* <div className="space-y-5" id="right"> */}
-        {/* <ClassDetail /> */}
-
-        {/* <div className="container4">
-            <div className="box px-5 divide-y divide-grey divide-opacity-10 overflow-auto" style={{width: '340px',height: '200px'}}> */}
-            {/* <TodoBox data={ASMlist} />             */}
-            {/* </div>
+      <div className="space-y-5" id="right">
+        <div className="container4">
+          <Box />
         </div>
 
-      </div> */}
+      </div>
 
 
   </React.Fragment>

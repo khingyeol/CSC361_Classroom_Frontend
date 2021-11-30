@@ -1,6 +1,5 @@
-import React from 'react';
-import { Route, Navigate } from 'react-router-dom'
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
+import { Link, useParams } from 'react-router-dom';
 import '../../index.css'
 import { jwtAuth } from '../../services/actions/api_auth';
 import App from '../../App';
@@ -11,9 +10,27 @@ import AuthPage from '../../containers/AuthPage';
 
 
 const Header = () => {
+    const { classid } = useParams();
+    const [content, setContent] = useState([])
+  
+    useEffect( async () => {
+        const res = await jwtAuth();
+    
+        if(res.data.result = 'OK'){
+          setContent(res.data)
+        }else{
+          setContent([])
+        }
+        
+      }, []);
 
-    const res = jwtAuth();
-
+      const what = () =>{
+          this.setState(state => ({eiei:'kk'}));
+      }
+    
+      const card = content.map({item}) => {
+        
+      }
 
 return (
     <div className="header flex justify-between w-auto px-8 py-4">
