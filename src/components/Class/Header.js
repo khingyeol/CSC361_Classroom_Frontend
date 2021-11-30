@@ -1,12 +1,19 @@
 import React from 'react';
+import { Route, Navigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import '../../index.css'
-
+import { jwtAuth } from '../../services/actions/api_auth';
+import App from '../../App';
+import AuthPage from '../../containers/AuthPage';
 //ดึง api เส้นใหม่ GET /auth และ
 //ถ้ามัน Response 401 ให้ window.location.reload() 
 //แต่ถ้า Response 200 เอา res.data.data มาใช้ใน Header ได้เลย
 
+
 const Header = () => {
+
+    const res = jwtAuth();
+
 
 return (
     <div className="header flex justify-between w-auto px-8 py-4">

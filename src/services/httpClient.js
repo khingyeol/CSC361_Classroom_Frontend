@@ -28,9 +28,14 @@ axios.interceptors.response.use(
     return response;
   },
   (error) => {
-    if(error.response.status === 403) {
+
+    if(error.response.status === 401) {
+      return 401
+    }
+    else if(error.response.status === 403) {
       return 403;
     }
+    
 
     if (axios.isCancel(error)) {
       return Promise.reject(error);

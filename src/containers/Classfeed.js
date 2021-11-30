@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import '../index.css';
 import { BrowserRouter, Route, Routes, Outlet, Link } from 'react-router-dom'
 import  Navigation from '../components/Class/Navigation'
-import Header from '../components/Class/Header';
-import AsmCard from '../components/Home/AsmCard';
 import ClassDetail from '../components/Class/ClassDetail';
 import TodoBox from '../components/Class/TodoBox';
 import {useParams} from 'react-router-dom'
 import { getTodo } from '../services/actions/api_class';
 import { isLoggedIn } from '../services/actions/api_auth'
 import App from '../App'
+import Header from '../components/Class/Header';
 
 function Classfeed(){
   const { classid } = useParams();
@@ -28,9 +27,6 @@ function Classfeed(){
   
   }, []);  
   
-    const todolist = ASMlist.map((item) =>
-      <TodoBox data={ASMlist} />
-    )
 
 
     return(
@@ -55,7 +51,7 @@ function Classfeed(){
 
         <div className="container4">
             <div className="box px-5 divide-y divide-grey divide-opacity-10 overflow-auto" style={{width: '340px',height: '200px'}}>
-            {todolist}
+            <TodoBox data={ASMlist} />            
             </div>
         </div>
 

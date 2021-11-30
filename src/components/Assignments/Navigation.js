@@ -17,8 +17,8 @@ const Navigation = () => {
 
             <div className="flex flex-wrap content-center items-stretch">
                 {/* <CallClass /> */}
-                <Link to={`/${classid}`}><div className="class-list bg-green bg-opacity-30">feed</div></Link>
-                <Link to={`/${classid}/assignment`}><div className="class-list">assignment</div></Link>
+                <Link to={`/${classid}`}><div className="class-list ">feed</div></Link>
+                <Link to={`/${classid}/assignment`}><div className="class-list bg-green bg-opacity-30">assignment</div></Link>
                 <Link to={`/${classid}/exam`}><div className="class-list">examination</div></Link>
             </div>
 

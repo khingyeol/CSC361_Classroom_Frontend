@@ -13,13 +13,15 @@ function App() {
   if(!isLoggedIn()){
     return ( 
     <AuthPage />
-    
     );
   }
 
     return (
-      <div>
+      <div className=''>
+        <div className='modal'>
         <Header />
+
+        </div>
         <div>
           <Outlet />
         </div>  

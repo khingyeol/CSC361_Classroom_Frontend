@@ -1,16 +1,19 @@
 import React, { useState ,useEffect } from 'react';
 // import { getAllClass } from '../../services/actions/api_class'
 import '../../index.css'
-import {useParams} from 'react-router-dom'
+import { useParams, Link} from 'react-router-dom'
 import { getfromClass } from '../../services/actions/api_class'
 import PostBox from './PostBox';
 import { Container } from 'purgecss/node_modules/postcss';
 
 const ClassASM = (props) => {
+    const { classid } = useParams();
+
 
 
     const card = props.data.map((item,post) => 
 
+    <Link to={`/${classid}/assignment/${item.id}`}>
     <div className="container4" key={post}>
     <div className="box asm justify-between flex-wrap content-center">
         <div className="flex flex-wrap content-center">
@@ -32,7 +35,8 @@ const ClassASM = (props) => {
             มอบหมายแล้ว
         </div>
     </div>
-</div>
+        </div>
+</Link>
     )
 
     return(

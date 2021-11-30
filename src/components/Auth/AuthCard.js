@@ -1,20 +1,10 @@
 import React, { useState } from 'react';
 import { login } from '../../services/actions/api_auth'
 import '../../index.css'
-import { Navigate, Link } from 'react-router-dom'
-import { isLoggedIn } from '../../services/actions/api_auth';
-import RegisCard from './RegisCard';
-import { Component } from 'react';
 
   
 const AuthCard = () => {
     const [inputs, setInputs] = useState({})
-    const [component, setComponent] = useState('login')
-
-    handleLangChange = () => {
-        var lang = this.button.value;
-        this.props.onSelectLanguage(lang);
-    }
 
     // const toRegister = () =>{
     //     this.setState((state)=>{
@@ -44,9 +34,7 @@ const AuthCard = () => {
    
 
 return (
-    <div className="py-28 authbox box shadow-lg flex content-center item-center justify-center h-full">
-    <div className='w-full px-8'>
-    <div className="relative flex flex-col ">
+    <div className=" ">
     
         <form onSubmit={onTappedLogin}>
 
@@ -82,13 +70,7 @@ return (
         </div>
         </form>
 
-            <button 
-            className='flex-auto text-right pr-10 text-grey underline'
-            onClick={() => setComponent('register')}
-            >Register</button>
     </div>
-    </div>
-</div>
 );
 };
 export default AuthCard;

@@ -10,6 +10,21 @@ export const register = async (values) => {
   }
 };
 
+// auth
+export const jwtAuth = async () => {
+  const res = await httpClient.get(server.AUTH_URL+api_auth.JWT_VERIFY);
+  if(res === 401) {
+    localStorage.removeItem(server.TOKEN_KEY);
+    return {auth: false, data: 'token expired'}
+  }
+
+  if (res.data.result == 'OK') {
+    return {auth: true, data: res.data.data}
+  } else {
+    return {auth: false, data: res.data.message}
+  }
+}
+
 export const isLoggedIn = () => {
   let token = localStorage.getItem(server.TOKEN_KEY);
   return token != null;

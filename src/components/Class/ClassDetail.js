@@ -13,7 +13,6 @@ const ClassDetail = () => {
 
     if(res.data.result = 'OK'){
       setContent(res.data.data)
-      console.log('content',res.data.data)
     }else{
       setContent([])
     }
