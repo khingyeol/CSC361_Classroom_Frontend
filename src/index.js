@@ -18,6 +18,9 @@ import ClassExam from './containers/ClassExam'
 import ClassPost from './containers/ClassPost'
 import Content from './components/Assignments/Content'
 import PostContent from './components/Post/PostContent'
+import ExamCreate from './containers/ExamCreate'
+import Testfile from './containers/Testfile'
+
 
 const AppWithRouter = () => (
   
@@ -30,7 +33,6 @@ const AppWithRouter = () => (
           <Route path="/" element={<Homepage />}>
             <Route path="/" element={<ClassCard />} />
             <Route path="/assignments" element={<AsmCard />}></Route>
-          </Route>
           </Route>
 
           <Route path="/:classid" element={<Classfeed />}>
@@ -48,7 +50,23 @@ const AppWithRouter = () => (
           </Route>
 
 
-          <Route path="/exam" element={<ClassExam />}>
+          <Route path="/:classid/exam" element={<ClassExam />}>
+            <Route path="/:classid/exam" element={<ASMContent />}></Route>
+            <Route path="/:classid/exam/:id" element={<Content />}></Route>
+          </Route>
+
+          <Route path="/exam/create" element={<ExamCreate />}>
+          </Route>
+
+          <Route path="/exam/:examid/create" element={<ASMContent />}></Route>
+
+
+          <Route path="/test" element={<Testfile />}>
+
+        </Route>
+
+
+          
 
           </Route>
 

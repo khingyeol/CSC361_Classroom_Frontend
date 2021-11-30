@@ -13,7 +13,7 @@ function ASMContent(){
   useEffect( async () => {
     const res = await getfromClass(classid);
 
-    if(res.data.result = 'OK'){
+    if(res.data.result == 'OK'){
       setContent(res.data.data)
       console.log('asm',res.data.data)
     }else{

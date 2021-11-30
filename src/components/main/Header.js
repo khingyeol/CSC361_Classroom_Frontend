@@ -17,10 +17,12 @@ const Header = () => {
   useEffect( async () => {
     const res = await jwtAuth();
 
-    if(res.data.result = 'OK'){
+    if(res.auth){
       setContent(res.data)
     }else{
       setContent([])
+      window.location.reload();
+
     }
 
   }, []);

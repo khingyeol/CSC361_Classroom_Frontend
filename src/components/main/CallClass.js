@@ -13,7 +13,7 @@ function CallClass(){
 
             const res = await getAllClass();
             console.log(res)
-            if (res.data.result = 'OK') {
+            if (res.data.result == 'OK') {
                 setContent(res.data.data)
                 console.log("eiei",res.data.data)
             }

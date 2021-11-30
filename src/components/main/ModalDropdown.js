@@ -1,17 +1,41 @@
 import React, { useState } from 'react';
 import '../../index.css'
 import { joinClass } from '../../services/actions/api_class';
+import { createClass } from '../../services/actions/api_class';
+import { setClassNickname } from '../../services/actions/api_class';
+
 
 const ModalDropdown = () => {
-    const [joinModal, setjoinModal] = React.useState(false);
     const [createModal, setcreateModal] = React.useState(false);
-
+    const [inputsCreate, setInputsCreate] = useState({
+      class_name: '',
+      class_description: '',
+      class_section: '',
+      class_room: '',
+      class_subject: '',
+      class_thumbnail: ''
+    })
+    
+    const [joinModal, setjoinModal] = React.useState(false);
     const [inputsJoin, setInputsJoin] = useState({class_code: ''})
+
+    const [inputsName, setInputsName] = useState({
+      class_code: '',
+      firstname: '',
+      lastname: '',
+      optional_name: ''
+    })
 
     const handleChangeJoin = (e) => {
         const data = {...inputsJoin}
+        const name = {...inputsName}
+        const create = {...inputsCreate}
         data[e.target.name]=e.target.value
+        name[e.target.name]=e.target.value
+        create[e.target.name]=e.target.value
         setInputsJoin(data)
+        setInputsName(name)
+        setInputsCreate(create)
     }
 
     const onTappedJoin = async (e) => {
@@ -20,19 +44,52 @@ const ModalDropdown = () => {
             {class_code:inputsJoin.class_code}
         )
 
-        if (res.data.data = 'OK'){
+        if (res.data.result == 'OK'){
             console.log('OK',res.data.data)
             window.location.reload();
+            setClassNickname({
+              class_code: inputsJoin.class_code,
+              firstname: inputsName.firstname,
+              lastname: inputsName.lastname,
+              optional_name: inputsName.optional_name
+            })
         }else{
             console.log(res.data.data)
         }
     }
 
+    const onTappedCreate = async (e) => {
+      e.preventDefault();
+      const res = await createClass(
+        {
+          class_name: inputsCreate.class_name,
+          class_description: inputsCreate.class_description,
+          class_section: inputsCreate.class_section,
+          class_room: inputsCreate.class_room,
+          class_subject: inputsCreate.class_subject,
+          class_thumbnail: '61a604dcf456d7f2cb754fa7'
+        })
+        if (res.data.result == 'OK'){
+          console.log('Create Success',res.data)
+          console.log('classcode',res.data)
+          window.location.reload();
+          setClassNickname({
+            class_code: res.data.data,
+            firstname: inputsName.firstname,
+            lastname: inputsName.lastname,
+            optional_name: inputsName.optional_name
+          })
+        }else{
+          console.log('Create fail',res.data.data)
+          console.log(res.data.data)
+        }
+    }
+    
+
 
 return (
 
-    <div class=""
-    >
+    <div class="">
 
 <div class="dropdown">
     <button className="home square-btn" type="button"></button>
@@ -68,9 +125,9 @@ return (
                     </h3>
                   </div>
                   {/*body*/}
-                  <form>
+                  <form className="p-6 space-y-3">
 
-                  <div className="relative p-6 flex-auto">
+                  <div className="relative flex-auto">
                     <p className="text-blueGray-500 text-lg leading-relaxed">
                         Enter Class Code :
                     </p>
@@ -80,6 +137,47 @@ return (
                     name="class_code"
                     onChange={handleChangeJoin}></input>
                   </div>
+
+                  <div className="relative flex-auto">
+                    <div className='flex space-x-4'>
+                        <span className="flex-1 text-grey">Firstname :</span>
+                        <span className="flex-1 text-grey">Lastname :</span>
+                    </div>
+
+                    <div className='flex space-x-4'>
+                        <input 
+                        type="text" 
+                        className="flex-1 tf w-full focus:outline-none focus:ring-2 focus:ring-green" 
+                        placeholder="" 
+                        name="firstname"
+                        value={inputsName.firstname}
+                        onChange={handleChangeJoin}
+                        />
+                        <input 
+                        type="text" 
+                        className="flex-1 tf w-full focus:outline-none focus:ring-2 focus:ring-green" 
+                        placeholder="" 
+                        name="lastname"
+                        value={inputsName.lastname} 
+                        onChange={handleChangeJoin}
+                        />
+
+                    </div>
+
+                  </div>
+
+                  <div className="relative flex-auto">
+                    <span className="flex-1 text-grey leading-relaxed">
+                        nickname (Optional) :
+                    </span>
+                    <input className="tf flex-1"
+                    type="text"
+                    value={inputsName.optional_name}
+                    name="optional_name"
+                    onChange={handleChangeJoin}></input>
+                  </div>
+
+
 
 
                   </form>
@@ -133,9 +231,9 @@ return (
                         type="text" 
                         className="tf w-full focus:outline-none focus:ring-2 focus:ring-green" 
                         placeholder="" 
-                        name=""
-                        // value={} 
-                        // onChange={}
+                        name="class_name"
+                        value={inputsJoin.class_name}
+                        onChange={handleChangeJoin}
                         />
                   </div>
 
@@ -145,9 +243,9 @@ return (
                         type="text" 
                         className="tf w-full focus:outline-none focus:ring-2 focus:ring-green" 
                         placeholder="" 
-                        name=""
-                        // value={} 
-                        // onChange={}
+                        name="class_subject"
+                        value={inputsJoin.class_subject}
+                        onChange={handleChangeJoin}
                         />
                   </div>
 
@@ -163,17 +261,17 @@ return (
                         type="text" 
                         className="flex-1 tf w-full focus:outline-none focus:ring-2 focus:ring-green" 
                         placeholder="" 
-                        name=""
-                        // value={} 
-                        // onChange={}
+                        name="class_section"
+                        value={inputsJoin.class_section}
+                        onChange={handleChangeJoin}
                         />
                         <input 
                         type="text" 
                         className="flex-1 tf w-full focus:outline-none focus:ring-2 focus:ring-green" 
                         placeholder="" 
-                        name=""
-                        // value={} 
-                        // onChange={}
+                        name="class_room"
+                        value={inputsJoin.class_room}
+                        onChange={handleChangeJoin}
                         />
 
                     </div>
@@ -186,13 +284,51 @@ return (
                         type="text" 
                         className="tf w-full focus:outline-none focus:ring-2 focus:ring-green" 
                         placeholder="" 
-                        name=""
-                        // value={} 
-                        // onChange={}
+                        name="class_description"
+                        value={inputsJoin.class_description}
+                        onChange={handleChangeJoin}
                         />
                   </div>
 
-                    
+                  <div className="relative flex-auto">
+                    <div className='flex space-x-4 mt-14'>
+                        <span className="flex-1 text-grey">Firstname :</span>
+                        <span className="flex-1 text-grey">Lastname :</span>
+                    </div>
+
+                    <div className='flex space-x-4'>
+                        <input 
+                        type="text" 
+                        className="flex-1 tf w-full focus:outline-none focus:ring-2 focus:ring-green" 
+                        placeholder="" 
+                        name="firstname"
+                        value={inputsName.firstname}
+                        onChange={handleChangeJoin}
+                        />
+                        <input 
+                        type="text" 
+                        className="flex-1 tf w-full focus:outline-none focus:ring-2 focus:ring-green" 
+                        placeholder="" 
+                        name="lastname"
+                        value={inputsName.lastname} 
+                        onChange={handleChangeJoin}
+                        />
+
+                    </div>
+
+                  </div>
+
+                  <div className="relative flex-auto">
+                    <span className="flex-1 text-grey leading-relaxed">
+                        nickname (Optional) :
+                    </span>
+                    <input className="tf flex-1"
+                    type="text"
+                    value={inputsName.optional_name}
+                    name="optional_name"
+                    onChange={handleChangeJoin}></input>
+                  </div>
+
 
                   </form>
                   {/*footer*/}
@@ -207,7 +343,7 @@ return (
                     <button
                       className="btn bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                       type="button"
-                      onClick={() => setcreateModal(false)}
+                      onClick={() => setcreateModal(false),onTappedCreate}
                     >
                       Create
                     </button>

@@ -9,7 +9,7 @@ const ClassCard = () => {
   useEffect( async () => {
     const res = await getAllClass();
     console.log(res.data.data)
-    if(res.data.result = 'OK'){
+    if(res.data.result == 'OK'){
       setContent(res.data.data)
     }else{
       setContent([])

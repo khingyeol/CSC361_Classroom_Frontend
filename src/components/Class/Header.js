@@ -16,10 +16,11 @@ const Header = () => {
     useEffect( async () => {
         const res = await jwtAuth();
     
-        if(res.data.result = 'OK'){
+        if(res.auth){
           setContent(res.data)
         }else{
           setContent([])
+          window.location.reload();
         }
         
       }, []);
@@ -28,9 +29,6 @@ const Header = () => {
           this.setState(state => ({eiei:'kk'}));
       }
     
-      const card = content.map({item}) => {
-        
-      }
 
 return (
     <div className="header flex justify-between w-auto px-8 py-4">

@@ -18,7 +18,8 @@ function Classfeed(){
     
     useEffect( async () => {
       const res = await getTodo(inputs);
-      if (res.data.result = 'OK') {
+      console.log('gettodo',ASMlist)
+      if (res.data.result == 'OK') {
           setASMlist(res.data.data)
       }
       else {
@@ -31,7 +32,7 @@ function Classfeed(){
 
     return(
       <React.Fragment>
-        <Header />
+        {/* <Header /> */}
 
       <div className="" id="left">
         <Navigation />

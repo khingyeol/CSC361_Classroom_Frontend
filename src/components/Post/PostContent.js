@@ -18,7 +18,7 @@ const PostContent = () => {
         const res = await postGet(inputs);
         console.log('post',res.data.data)
 
-        if(res.data.result = 'OK'){
+        if(res.data.result == 'OK'){
             setContent(res.data.data)
         }else{
             setContent([])

@@ -11,7 +11,7 @@ const ClassDetail = () => {
   useEffect( async () => {
     const res = await getfromClass(classid);
 
-    if(res.data.result = 'OK'){
+    if(res.data.result == 'OK'){
       setContent(res.data.data)
     }else{
       setContent([])

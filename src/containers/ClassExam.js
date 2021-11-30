@@ -14,6 +14,8 @@ function ClassExam(){
       </div>
 
       <div className="" id="middle">
+        <Link to="/exam/create"> <button className="box p-3 shadow-lg">create exam</button> </Link>
+      <div></div>
       <Outlet />
       </div>
 

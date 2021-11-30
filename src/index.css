@@ -151,6 +151,17 @@ h4{
   border-radius: 21.5px;
 }
 
+.btn-border{
+  font-weight: bold;
+  font-size: 18px;
+  border-width: 2px;
+  border-color: theme('colors.green');
+  background-color: theme('colors.white');
+  color: theme('colors.green');
+  height: 43px;
+  border-radius: 21.5px;
+}
+
 .btn:hover{
   background-color: #2C9A7E;
 }
@@ -239,3 +250,61 @@ h4{
     position:relative;
     z-index: 9999;
     }
+
+
+    .select-items div,.select-selected {
+      color: #ffffff;
+      padding: 8px 16px;
+      border: 1px solid transparent;
+      border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+      cursor: pointer;
+    }
+
+    
+    option:hover:before {
+      display: inline;
+    }
+    
+    select {
+      font-size: 20px;
+      font-size-adjust: 0.3;
+  }
+  
+
+  .button {
+    @apply relative inline-flex items-center px-5 py-3 border border-grey bg-white text-sm leading-5 text-black transition ease-in-out duration-150 rounded-md;
+  }
+  
+  .button:hover {
+    @apply text-grey;
+  }
+  
+  .button:focus {
+    @apply z-10 outline-none border-green bg-green bg-opacity-30;
+  }
+  
+  .button:active {
+    @apply bg-grey bg-opacity-10;
+  }
+  
+  .button-group {
+    @apply relative z-0 inline-flex shadow-sm;
+  }
+  
+  .button-group > .button:not(:first-child) {
+    @apply rounded-l-none -ml-px;
+  }
+  
+  .button-group > .button:not(:last-child) {
+    @apply rounded-r-none;
+  }
+
+  .exam-tf{
+    background-color: white;
+    padding: 5px;
+    @apply border border-grey bg-white text-sm rounded-md
+  }
+
+  .exam-textarea{
+
+  }

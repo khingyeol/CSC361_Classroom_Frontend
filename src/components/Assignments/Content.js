@@ -18,7 +18,7 @@ const Content = () => {
         const res = await assignmentGet(inputs);
         console.log('asm content',res.data.data)
 
-        if(res.data.result = 'OK'){
+        if(res.data.result == 'OK'){
             setContent(res.data.data)
         }else{
             setContent([])

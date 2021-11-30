@@ -28,6 +28,7 @@ export const api_class = {
   NICKNAME: `/nickname`,
   JOIN: `/join`,
   LEAVE: `/leave`,
+  CREATE: `/create`,
   EDIT_DETAILS: `/edit/details`,
   EDIT_ROLES: `/edit/roles`,
   ASM_ALL: `/assignment/get/all`,

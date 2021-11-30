@@ -49,6 +49,11 @@ export const setClassNickname = async (values) => {
     return await httpClient.patch(server.CLASS_URL+api_class.NICKNAME, values);
 }
 
+// class/create
+export const createClass = async (values) => {
+    return await httpClient.post(server.CLASS_URL+api_class.CREATE, values);
+}
+
 // class/join
 export const joinClass = async (values) => {
     return await httpClient.patch(server.CLASS_URL+api_class.JOIN, values);

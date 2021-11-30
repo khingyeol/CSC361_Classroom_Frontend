@@ -29,6 +29,7 @@ const AuthCard = () => {
         }
         else {
             console.log(res.data);
+
         }
     };
    
