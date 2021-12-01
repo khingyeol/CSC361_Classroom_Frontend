@@ -48,6 +48,10 @@ export const api_file = {
   UPLOAD_IMAGE: `/upload/img`
 }
 
+export const api_exam ={
+  CREATE: `/`
+}
+
 // export const api_post = {
 //   POST_ALL: `/post`,
 // }

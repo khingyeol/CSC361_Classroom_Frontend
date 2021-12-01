@@ -92,7 +92,7 @@ return (
     <div class="">
 
 <div class="dropdown">
-    <button className="home square-btn" type="button"></button>
+    <button className="home square-btn text-grey text-3xl font-normal" type="button">+</button>
         <ul class="dropdown-menu absolute hidden ">
                 <li class="">
                 <a 

@@ -72,8 +72,10 @@ h4{
   width: 50px;
   height: 50px;
   border-radius: 12px;
-  background-color: theme('colors.grey');
-  opacity: 0.2;
+  border-width: 1px;
+  border-color: rgba(112, 112, 112, 0.5);
+  background-color: theme('colors.white');
+  /* opacity: 0.2; */
 }
 .header{
   background-color: theme('colors.lightgrey');
@@ -272,7 +274,11 @@ h4{
   
 
   .button {
-    @apply relative inline-flex items-center px-5 py-3 border border-grey bg-white text-sm leading-5 text-black transition ease-in-out duration-150 rounded-md;
+    @apply relative inline-flex items-center px-5 py-3 border border-grey  text-sm leading-5 text-black transition ease-in-out duration-150 rounded-md;
+  }
+
+  .button .unselected{
+    background: #000;
   }
   
   .button:hover {

@@ -23,7 +23,13 @@ const PostBox = () => {
 
     const onTappedSubmit = async (e) => {
         e.preventDefault();
-        const res = await postPublish({class_code: classid, data:{type:'normal',post_content:inputs.post_content,post_optional_file: []}})
+        const res = await postPublish(
+            {class_code: classid, 
+                data:{
+                    type:'normal',
+                    post_content:inputs.post_content,
+                    post_optional_file: []}
+                })
         console.log('input submit',inputs)
         if(res.data.result == 'OK'){
             window.location.reload();

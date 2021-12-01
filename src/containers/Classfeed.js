@@ -51,7 +51,7 @@ function Classfeed(){
         <ClassDetail />
 
         <div className="container4">
-            <div className="box px-5 divide-y divide-grey divide-opacity-10 overflow-auto" style={{width: '340px',height: '200px'}}>
+            <div className="shadow-lg box px-5 divide-y divide-grey divide-opacity-10 overflow-auto" style={{width: '340px',height: '200px'}}>
             <TodoBox data={ASMlist} />            
             </div>
         </div>

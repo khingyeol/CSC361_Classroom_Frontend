@@ -11,9 +11,9 @@ function Homepage(){
                 <Navigation />
             </div>
 
-            <div className='ml-80 mr-10'>
-                <div className='inline-grid grid-cols-3 gap-x-4 gap-y-4 '>
-                    <Outlet />
+            <div className='ml-80 mr-10' id="">
+                <div className='flex flex-wrap'>
+                    <Outlet className="" />
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@ const ClassCard = () => {
   const card = content.map((item) =>
   <main>
     <Link to={'/'+item.class_code}>
-  <div className="">
+  <div className="m-4">
     <div class="relative box shadow-md rounded-md overflow-hidden" style={{width: '340px',height: '200px'}}>
       <div className=''>
         <div className='absolute p-5 truncate'>

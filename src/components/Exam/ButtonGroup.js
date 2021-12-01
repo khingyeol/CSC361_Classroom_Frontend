@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-import '../../index.css'
+// import '../../index.css'
+// import '../Test/style.css'
 
 export class ButtonGroup extends Component {
     state = {};
@@ -9,19 +10,11 @@ export class ButtonGroup extends Component {
       const { selected, onChange, text, value } = this.props;
       return (
         <div
-          className="button"
+          className={`button ${value !== selected ? "bg-white" : "bg-green bg-opacity-30"}`}
           onClick={() => {
             onChange(value);
           }}
         >
-          <div
-            className={`radio-outer-circle ${value !== selected && "unselected"}`}
-          >
-            <div
-              className={`radio-inner-circle ${value !== selected &&
-                "unselected-circle"}`}
-            />
-          </div>
           <div className="helper-text">{text}</div>
         </div>
       );

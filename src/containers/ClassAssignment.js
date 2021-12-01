@@ -14,6 +14,8 @@ import { jwtAuth } from '../services/actions/api_auth';
 function ClassAssignment(){
 
   const { classid } = useParams();
+  const { id } = useParams();
+
   const [content, setContent] = useState([])
   const [role, setRole] = useState('')
 
@@ -21,15 +23,9 @@ function ClassAssignment(){
 
   useEffect( async () => {
     const res = await jwtAuth();
-
-    console.log('check',res.data)
-
     if(res.auth){
       setContent(res.data)
-
-      res.data[0].class.map(item => {
-        console.log('role',item)
-    
+      res.data[0].class.map(item => {    
         if (item.class_code === classid) {
           setRole(item.role)
         }
@@ -55,14 +51,15 @@ function ClassAssignment(){
 
       <div className="" id="middle">
         <div>
-          { role == 'teacher' ? <Box /> : role == 'student' ? console.log('Im stude',role) : console.log('nothing') }
+          { role == 'teacher' ? <button className="box p-3 shadow-lg">create assignment</button> 
+          : role == 'student' ? console.log('Im stude',role) : console.log('nothing') }
         </div>
           <Outlet />
       </div>
 
       <div className="space-y-5" id="right">
         <div className="container4">
-          <Box />
+          { !id == '' ? <Box /> : '' }
         </div>
 
       </div>

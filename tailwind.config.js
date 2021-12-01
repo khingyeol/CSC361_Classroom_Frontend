@@ -16,6 +16,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   theme: {
     textColor: {
+      'white': '#fff',
       'black': '#000',
       'green': '#41B094',
       'grey': '#8B8B8B',

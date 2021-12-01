@@ -35,7 +35,7 @@ const Header = () => {
       <>
           <div className="header flex justify-between w-auto px-8 py-4">
           <Link to="/">
-              <h1 className="top-4 left-6 self-center">web<span className="colors-green">site</span></h1>
+              <h1 className="top-4 left-6 self-center">on<span className="colors-green">Class</span>().</h1>
           </Link>
           <div className="space-x-4 top-4 right-4 self-center inline-flex items-center">
               
