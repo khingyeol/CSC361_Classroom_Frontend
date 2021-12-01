@@ -4,7 +4,7 @@ export const NETWORK_TIMEOUT_MESSAGE = "A network timeout has occurred, Please t
 export const UPLOAD_PHOTO_FAIL_MESSAGE = "An error has occurred. The photo was unable to upload.";
 export const NOT_CONNECT_NETWORK = "NOT_CONNECT_NETWORK";
 
-export const apiUrl = "http://127.0.0.1:8080/api";
+export const apiUrl = "http://jojjoeeeeeee.trueddns.com:53383/api";
 export const imageUrl = "http://127.0.0.1:8080/public/images";
 export const fileUrl = "http://127.0.0.1:8080/public/files";
 
@@ -48,8 +48,13 @@ export const api_file = {
   UPLOAD_IMAGE: `/upload/img`
 }
 
-export const api_exam ={
-  CREATE: `/`
+export const api_exam = {
+  GET: `/get`,
+  GET_ALL: `/get/all`,
+  CREATE: `/create`,
+  STD_SUBMIT: `/submit`,
+  SUBJ_TEACHER_SCORE: `/score/subjective`,
+  TEACHET_GET_RESULT: `/result/teacher`
 }
 
 // export const api_post = {

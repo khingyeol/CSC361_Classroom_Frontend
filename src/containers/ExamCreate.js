@@ -62,7 +62,7 @@ function ExamCreate(){
 
         //console.log('onClick',examInfo)
         //console.log('exam created',examCreated);
-      // setStatus('2')
+      setStatus('2')
       }, []);
 
     return (
