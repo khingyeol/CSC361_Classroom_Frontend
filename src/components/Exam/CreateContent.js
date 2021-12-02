@@ -1,5 +1,5 @@
 import React, { useState, useEffect, PropTypes } from 'react';
-        import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../../index.css'
 import {useParams} from 'react-router-dom'
 import { ButtonGroup } from './ButtonGroup';
@@ -67,7 +67,6 @@ const CreateContent = ({onClick}) => {
         const final_arr = []
         //if เลือกข้อกา part แรก
         //if 
-        // console.log('sec',two)
         const partArr = {
             part_id: '1',
             type: (selected == 'first' ? 'objective' : 'subjective' ),

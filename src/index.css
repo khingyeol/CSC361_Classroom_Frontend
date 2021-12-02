@@ -314,3 +314,17 @@ h4{
   .exam-textarea{
 
   }
+
+  .input-exam {
+    background-color: transparent;
+  }
+
+  .input-answer {
+      @apply relative inline-flex items-center px-5 py-3 border border-grey  text-sm leading-5 text-black transition ease-in-out duration-150 rounded-md;
+
+  }
+
+  .input-questions {
+    @apply relative inline-flex items-center px-5 py-3 border border-grey  text-lg leading-5 text-black transition ease-in-out duration-150 rounded-md;
+
+}
