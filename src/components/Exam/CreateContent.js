@@ -192,7 +192,6 @@ const CreateContent = ({onClick}) => {
                 onChange={handleChange}
                 ></textarea>
                 </div>
-
                 <div className="flex items-center space-x-3">
                 <b>วัน-เวลาเริ่มสอบ </b>
                 <input type="datetime-local" id="birthdaytime" name="birthdaytime"

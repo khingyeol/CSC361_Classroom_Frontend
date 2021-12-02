@@ -4,7 +4,6 @@ import { ButtonGroup } from './ButtonGroup';
 import { TFgroup } from './TFgroup';
 
 function QuizObj({index,item,onClick}){
-    console.log('eeeeeeeeeeee',item)
     const [selected, setSelected] = useState("first");
     const [quizObj, setQuiz] = useState({
         question: '',
@@ -14,22 +13,18 @@ function QuizObj({index,item,onClick}){
         answer: [],
         score: ''
     })
-    console.log('sec',selected)
-
     const handleChange = (e) => {
         const obj={...quizObj}
         obj[e.target.id]=e.target.value
         setQuiz(obj)
-        console.log('select',selected)
-        if (selected != "first"){
-            item.question = quizObj.question
-            item.answer = [selected]    
-        }
-        onClick(item,index)
 
     }
 
     const onTapped = () => {
+        item.question = quizObj.question
+        item.answer = [selected]    
+
+        onClick(item,index)
     }
 
     return(
@@ -37,12 +32,16 @@ function QuizObj({index,item,onClick}){
             
             <h4>Questions {index+1}:</h4>
 
-            <textarea className="min-w-full	 input-questions text-lg" 
+        <div className="flex ">
+        <textarea className="	min-w-full input-questions text-lg" 
             placeholder="คำถาม..."
             id="question"
             onChange={handleChange}                                        
             >
             </textarea>  
+            <button className="btn" onClick={onTapped}>submit</button>
+
+        </div>
             
             <div className="mt-4 space-x-3">
             <TFgroup 
