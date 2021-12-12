@@ -2,8 +2,8 @@ import { server, api_auth } from '../constants';
 import httpClient from '../httpClient';
 
 export const register = async (values) => {
-  const res = httpClient.post(server.AUTH_URL+api_auth.REGISTER_URL, values);
-  if (res.data.result == 'ok') {
+  const res = await httpClient.post(server.AUTH_URL+api_auth.REGISTER_URL, values);
+  if (res.data.result == 'OK') {
     return true;
   } else {
     return false;
