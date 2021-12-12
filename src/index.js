@@ -22,6 +22,7 @@ import ExamCreate from './containers/ExamCreate'
 import Testfile from './components/Test/Testfile'
 import ExamContent from './components/Exam/ExamContent'
 import ExamShow from './components/Exam/ExamShow'
+import AssignmentCreate from './containers/AssignmentCreate'
 
 const AppWithRouter = () => (
   
@@ -32,41 +33,33 @@ const AppWithRouter = () => (
       <Route path="" element={<App />}>
 
           <Route path="/" element={<Homepage />}>
-            <Route path="/" element={<ClassCard />} />
-            <Route path="/assignments" element={<AsmCard />}></Route>
+              <Route path="/" element={<ClassCard />} />
+              <Route path="/assignments" element={<AsmCard />}></Route>
           </Route>
 
           <Route path="/:classid" element={<Classfeed />}>
-            <Route path="/:classid/" element={<ClassContent />}></Route>
-        
-        </Route>
+              <Route path="/:classid/" element={<ClassContent />}></Route>
+          </Route>
 
         <Route path="/:classid/post" element={<ClassPost />}>
-          <Route path="/:classid/post/:id" element={<PostContent />}></Route>
-      </Route>
+            <Route path="/:classid/post/:id" element={<PostContent />}></Route>
+        </Route>
 
-          <Route path="/:classid/assignment" element={<ClassAssignment />}>
+        <Route path="/:classid/assignment" element={<ClassAssignment />}>
             <Route path="/:classid/assignment" element={<ASMContent />}></Route>
             <Route path="/:classid/assignment/:id" element={<Content />}></Route>
-          </Route>
-
-
-          <Route path="/:classid/exam" element={<ClassExam />}>
-            <Route path="/:classid/exam" element={<ExamContent />}></Route>
-            {/* <Route path="/:classid/exam/:id" element={<Content />}></Route> */}
-          </Route>
-
-          <Route path=":classid/exam/create" element={<ExamCreate />}>
-          </Route>
-
-          {/* <Route path="/exam/:examid/create" element={<ASMContent />}></Route> */}
-
-          <Route path=":classid/exam/:examid/" element={<ExamShow />}></Route>
-
-
-          <Route path="/test" element={<Testfile />}>
-
+            <Route path="/:classid/assignment/create" element={<AssignmentCreate />}></Route>
         </Route>
+
+        <Route path="/:classid/exam" element={<ClassExam />}>
+            <Route path="/:classid/exam" element={<ExamContent />}></Route>
+        </Route>
+
+        <Route path=":classid/exam/create" element={<ExamCreate />}></Route>
+        <Route path=":classid/exam/:examid/" element={<ExamShow />}></Route>
+
+          {/* <Route path="/test" element={<Testfile />}>
+        </Route> */}
 
 
           

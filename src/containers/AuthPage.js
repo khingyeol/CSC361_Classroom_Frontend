@@ -17,30 +17,24 @@ function AuthPage(){
                 <div className='col-span-2 '>
                 <div className='grid justify-items-center'>
                     <div className='py-14 authbox box shadow-lg flex content-center item-center justify-center h-full'>
-                        <div className='w-full px-8'>
+                        <div className='w-full px-8 '>
                             <div className='relative flex flex-col'>
-                            {
-                                component === 'login' ? <AuthCard /> : <RegisCard />
-                            }
+                            {component === 'login' ? <AuthCard /> : <RegisCard />}
                             
                             <button 
-                            className='flex-auto text-right pr-10 text-grey underline'
-                            onClick={() => setComponent(component === 'login' ? 'register' : 'login')}
-                            >{component === 'login' ? 'Register' : 'back to Login'}
+                                className='flex-auto text-right pr-10 text-grey underline'
+                                onClick={() => setComponent(component === 'login' ? 'register' : 'login')}
+                                >{component === 'login' ? 'Register' : 'back to Login'}
                             </button>
-                        </div>
+                            </div>
                         
                         </div>
                         
-
-                        
-
-                        
-                        </div>
-                        </div>
+                    </div>
                 </div>
-                
             </div>
+                
+        </div>
 
         </div>
     );

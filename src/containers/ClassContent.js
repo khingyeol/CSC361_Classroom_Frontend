@@ -13,9 +13,10 @@ function ClassContent(){
 
   useEffect( async () => {
     const res = await getfromClass(classid);
-
+    
     if(res.data.result == 'OK'){
       setContent(res.data.data)
+      console.log('CONSOLE LOG CONTENT',res.data.data)
     }else{
       setContent([])
     }

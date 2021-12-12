@@ -6,13 +6,6 @@ import '../../index.css'
 const AuthCard = () => {
     const [inputs, setInputs] = useState({})
 
-    // const toRegister = () =>{
-    //     this.setState((state)=>{
-    //         return {isLogin: false}
-    //     })
-    //     return isLogin
-    // }
-
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;

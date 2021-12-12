@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, Outlet, Link } from 'react-router-dom'
 import {useParams} from 'react-router-dom'
 import Examlist from './Examlist';
-import { getfromClass } from '../../services/actions/api_class';
+import { getAllExam } from '../../services/actions/api_exam';
 
 function ExamContent(){
 
@@ -10,26 +10,22 @@ function ExamContent(){
   const [content, setContent] = useState([])
 
   useEffect( async () => {
-    const res = await getfromClass(classid);
-
+    const reqBody = {
+        class_code: classid
+    }
+    const res = await getAllExam(reqBody)
     if(res.data.result == 'OK'){
       setContent(res.data.data)
-      console.log('asm',res.data.data)
+      
     }else{
       setContent([])
     }
   }, []);
 
-
-    // const ASMlist = content.map((item) =>
-    //   <ClassASM data={item.class_assignment} />
-    // )
-
     return(
       <React.Fragment>
           <div className="">
-            {/* {ASMlist} */}
-            eiei
+          <Examlist data={content} />
         </div>
   </React.Fragment>
 )

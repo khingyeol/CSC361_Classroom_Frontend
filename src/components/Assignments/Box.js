@@ -25,8 +25,14 @@ function Box(){
 
         if(res.data.result == 'OK'){
             setContent(res.data.data)
-            setResult(res.data.data[0].submit_result.file_result)
-        }else{
+            if (res.data.data[0].role == 'student') {
+                setResult(res.data.data[0].submit_result.file_result)
+            }
+            else {
+                //teacher
+                //set for teacher
+            }
+                }else{
             setContent([])
             setResult([])
         }

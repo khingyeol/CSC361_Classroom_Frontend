@@ -21,6 +21,7 @@ const FeedPost = (props) => {
       const res = await jwtAuth();
         if (res.auth){
             setContent(res.data[0])
+            console.log('data0',res.data[0])
         }else{
             // window.location.reload()
         }  
@@ -37,7 +38,9 @@ const FeedPost = (props) => {
         const targetArr = e.target.id.split(',')
         const id = targetArr[1]
         const type = targetArr[0]
-        
+
+        console.log('e.target.id',e.target.id)
+
         console.log('check',type)
 
         if (type==='post'){
@@ -123,7 +126,7 @@ const FeedPost = (props) => {
 
                     <input 
                     type="" 
-                    className="flex-auto tf  w-full focus:outline-none focus:ring-2 focus:ring-grey" 
+                    className="flex-auto tf w-full focus:outline-none focus:ring-2 focus:ring-grey" 
                     placeholder="comments..."
                     name="content"
                     onChange={handleChange}

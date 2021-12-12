@@ -52,7 +52,13 @@ console.log('propsssss',examSchema)
 
     const loopSubj = p2amount.map((item,index) =>
     <div>
-        <QuizSubj index={index} item={item} onClick={handleClick2}/>
+        {
+            examSchema[0].exam.part_list[1].type == "objective" ?
+            <QuizObj index={index} item={item} onClick={handleClick} />
+            : examSchema[0].exam.part_list[1].type == "subjective" ?
+            <QuizSubj index={index} item={item} onClick={handleClick2} />
+            : ''
+        }
     </div>
     )
 

@@ -51,7 +51,7 @@ function ClassAssignment(){
 
       <div className="" id="middle">
         <div>
-          { role == 'teacher' ? <button className="box p-3 shadow-lg">create assignment</button> 
+          { role == 'teacher' ? <Link to={`/${classid}/assignment/create`}><button className="box p-3 shadow-lg">create assignment</button></Link>
           : role == 'student' ? console.log('Im stude',role) : console.log('nothing') }
         </div>
           <Outlet />

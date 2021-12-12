@@ -39,7 +39,8 @@ function ClassExam(){
       }
 
       <div></div>
-      <Outlet />
+      <Outlet data={role} />
+      {console.log('roleeee',role)}
       </div>
 
       <div className="space-y-5" id="right">

@@ -27,20 +27,14 @@ export class TFgroup extends Component {
           //   onChange(value);
           // }}
           onClick={() => {onClick(index)}}
-        >
-          <div className="helper-text"><input className="input-exam" 
-          // value={() => {onChange(text)}}
-          value={text}
-          // onChange={text}
-          // value={this.state.inputValue}
-          /></div>
+        >{text}
         </div>
       );
     }
   }
   
   TFgroup.propTypes = {
-    // text: PropTypes.node.isRequired,
+    text: PropTypes.node.isRequired,
     onChange: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
     selected: PropTypes.string.isRequired,

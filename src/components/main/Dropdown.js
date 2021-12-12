@@ -8,6 +8,7 @@ const Dropdown = (props) => {
 
     const onTappedLogout = () =>{
         logout();
+        window.history.pushState({}, 'onClass().', '/', 'localhost:3000');
         window.location.reload();
     }
 

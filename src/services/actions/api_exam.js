@@ -6,7 +6,7 @@ export const getExam = async (values) => {
     const res =  await httpClient.post(server.EXAM_URL+api_exam.GET, values);
 
     if (res.data.result == 'nOK') {
-        return {valid: 'NO', data: res.data.message}
+        return {valid: 'NO', data: [res.data.message]}
     } else if (res.data.result == 'OK') {
         return {valid: 'YES', data: res.data.data}
     }
